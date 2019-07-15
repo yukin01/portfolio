@@ -1,6 +1,7 @@
 module.exports = {
   env: { 
-    browser: true
+    browser: true,
+    node: true
   },
   extends: [
     "eslint:recommended", // https://github.com/eslint/eslint/blob/master/conf/eslint-recommended.js
@@ -12,6 +13,8 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/prefer-interface": "off",
+    'react/prop-types': false
   },
   settings: {}
 }
