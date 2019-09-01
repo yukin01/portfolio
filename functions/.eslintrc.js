@@ -13,8 +13,7 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/prefer-interface": "off",
-    'react/prop-types': false
+    "@typescript-eslint/prefer-interface": "off"
   },
   settings: {}
 }
