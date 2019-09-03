@@ -1,5 +1,11 @@
 name: Greet Everyone
-on: [push]
+on:
+  push:
+    branchs:
+      - master
+  pull_request:
+    branchs:
+      - '*'
 
 jobs:
   build:
