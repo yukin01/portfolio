@@ -5,8 +5,5 @@
   "repository": "git@github.com:yukin01/portfolio.git",
   "author": "yukin01 <bump1105@gmail.com>",
   "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "firebase-tools": "^7.3.0"
-  }
+  "private": true
 }
