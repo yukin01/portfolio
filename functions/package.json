@@ -1,15 +1,15 @@
 {
   "name": "functions",
+  "private": true,
   "scripts": {
     "dev": "next app",
     "build-app": "next build app",
     "build-functions": "tsc --project server",
     "build": "yarn build-app && yarn build-functions",
     "serve": "yarn build && cross-env NODE_ENV=production firebase serve --only functions,hosting",
-    "shell": "yarn build && firebase functions:shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log",
-    "lint": "eslint '**/*.{ts,tsx}'"
+    "lint": "eslint '**/*.{ts,tsx}'",
+    "version": "firebase --version"
   },
   "engines": {
     "node": "8"
@@ -32,8 +32,22 @@
     "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
+    "firebase-tools": "^7.3.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
     "typescript": "^3.6.2"
   },
-  "private": true
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "version": "0.0.0"
 }
