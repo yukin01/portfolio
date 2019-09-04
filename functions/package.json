@@ -8,8 +8,7 @@
     "build": "yarn build-app && yarn build-functions",
     "serve": "yarn build && cross-env NODE_ENV=production firebase serve --only functions,hosting",
     "deploy": "firebase deploy --only functions",
-    "lint": "eslint '**/*.{ts,tsx}'",
-    "version": "firebase --version"
+    "lint": "eslint '**/*.{ts,tsx}'"
   },
   "engines": {
     "node": "8"
@@ -44,10 +43,6 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "version": "0.0.0"
+    "*.{ts,tsx}": ["eslint --fix", "git add"]
+  }
 }
