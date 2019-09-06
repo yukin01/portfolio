@@ -1,11 +1,8 @@
-name: Greet Everyone
+name: Deploy
 on:
   push:
     branchs:
       - master
-  pull_request:
-    branchs:
-      - '*'
 
 jobs:
   build:
