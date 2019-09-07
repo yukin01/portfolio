@@ -3,6 +3,11 @@ on:
   push:
     branches:
       - master
+    paths:
+      - functions
+      - public
+      - firebase.json
+      - .firebaserc
 
 jobs:
   build:
@@ -10,4 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: echo 'Hello World!'
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 8.x
+      - run: yarn --cwd ./functions --frozen-lockfile
+      - run: yarn --cwd ./functions deploy --token $FIREBASE_TOKEN
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
