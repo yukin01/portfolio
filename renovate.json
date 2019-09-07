@@ -4,7 +4,7 @@
     "config:base"
   ],
   "rangeStrategy": "bump",
-  "schedule": ["on friday"],
+  "schedule": ["at any time"],
   "packageRules": [
     {
       "depTypeList": ["dependencies"],
