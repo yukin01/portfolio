@@ -1,0 +1,29 @@
+{
+  "timezone": "Asia/Tokyo",
+  "extends": [
+    "config:base"
+  ],
+  "ignorePresets": ["group:reactMonorepo"],
+  "rangeStrategy": "bump",
+  "schedule": ["on friday"],
+  "prHourlyLimit": 5,
+  "packageRules": [
+    {
+      "packagePatterns": ["^@types/react", "^react"],
+      "groupName": "react monorepo"
+    },
+    {
+      "packageNames": ["prettier"],
+      "packagePatterns": ["^eslint"],
+      "groupName": "linter and formatter packages"
+    },
+    {
+      "packageNames": [
+        "lint-staged",
+        "husky",
+        "cross-env"
+      ],
+      "groupName": "development tools"
+    }
+  ]
+}
