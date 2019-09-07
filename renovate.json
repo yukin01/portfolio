@@ -1,0 +1,18 @@
+{
+  "timezone": "Asia/Tokyo",
+  "extends": [
+    "config:base"
+  ],
+  "rangeStrategy": "bump",
+  "schedule": ["on friday"],
+  "packageRules": [
+    {
+      "depTypeList": ["dependencies"],
+      "groupName": "Dependencies"
+    },
+    {
+      "depTypeList": ["devDependencies"],
+      "groupName": "Dev Dependencies"
+    }
+  ]
+}
