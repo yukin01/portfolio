@@ -7,7 +7,7 @@
     "build-functions": "tsc --project server",
     "build": "yarn build-app && yarn build-functions",
     "serve": "yarn build && cross-env NODE_ENV=production firebase serve --only functions,hosting",
-    "deploy": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions,hosting",
     "lint": "eslint '**/*.{ts,tsx}'"
   },
   "engines": {
