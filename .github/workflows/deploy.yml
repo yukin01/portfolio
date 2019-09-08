@@ -3,15 +3,15 @@ on:
   push:
     branches:
       - master
-    paths:
-      - functions
-      - public
-      - firebase.json
-      - .firebaserc
+    # https://github.community/t5/GitHub-Actions/Github-Action-not-being-triggered/m-p/30173/highlight/true#M163
+    # paths:
+    #   - functions
+    #   - public
+    #   - firebase.json
+    #   - .firebaserc
 
 jobs:
-  build:
-    name: Greeting
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
