@@ -1,11 +1,11 @@
-name: Lint And Build
+name: Lint And Type Check
 on:
   pull_request:
     branches:
       - master
 
 jobs:
-  lint-and-build:
+  lint-and-type-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -14,4 +14,4 @@ jobs:
           node-version: 8.x
       - run: yarn --cwd ./functions --frozen-lockfile
       - run: yarn --cwd ./functions lint
-      - run: yarn --cwd ./functions build
+      - run: yarn --cwd ./functions type-check
