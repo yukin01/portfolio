@@ -7,7 +7,7 @@
     "build-functions": "tsc --project server",
     "build": "yarn build-app && yarn build-functions",
     "serve": "yarn build && cross-env NODE_ENV=production firebase serve --only functions,hosting",
-    "deploy": "firebase deploy --only functions,hosting",
+    "deploy": "cross-env NODE_ENV=production firebase deploy --only functions,hosting",
     "lint": "eslint '**/*.{ts,tsx}'",
     "type-check": "tsc --project server --noEmit && tsc --project app --noEmit"
   },
@@ -18,7 +18,7 @@
   "dependencies": {
     "firebase-admin": "^8.6.0",
     "firebase-functions": "^3.2.0",
-    "next": "9.0.6",
+    "next": "^9.0.8",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
