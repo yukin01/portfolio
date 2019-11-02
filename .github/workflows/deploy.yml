@@ -3,12 +3,11 @@ on:
   push:
     branches:
       - master
-    # https://github.community/t5/GitHub-Actions/Github-Action-not-being-triggered/m-p/30173/highlight/true#M163
-    # paths:
-    #   - functions
-    #   - public
-    #   - firebase.json
-    #   - .firebaserc
+    paths:
+      - functions/**
+      - public/**
+      - firebase.json
+      - .firebaserc
 
 jobs:
   deploy:
@@ -18,7 +17,19 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 8.x
-      - run: yarn --cwd ./functions --frozen-lockfile
-      - run: yarn --cwd ./functions deploy --token $FIREBASE_TOKEN
+
+      - uses: actions/cache@preview
+        id: cache
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn --cwd ./functions --frozen-lockfile
+
+      - name: Deploy to firebase
+        run: yarn --cwd ./functions deploy --token $FIREBASE_TOKEN
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
