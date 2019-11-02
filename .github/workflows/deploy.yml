@@ -27,7 +27,6 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: yarn --cwd ./functions --frozen-lockfile
 
       - name: Deploy to firebase
