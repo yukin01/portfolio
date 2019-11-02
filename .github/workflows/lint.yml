@@ -12,6 +12,20 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 8.x
-      - run: yarn --cwd ./functions --frozen-lockfile
-      - run: yarn --cwd ./functions lint
-      - run: yarn --cwd ./functions type-check
+
+      - uses: actions/cache@preview
+        id: cache
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn --cwd ./functions --frozen-lockfile
+
+      - name: Lint and check types
+        run: |
+          yarn --cwd ./functions lint
+          yarn --cwd ./functions type-check
