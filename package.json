@@ -13,6 +13,7 @@
     "lint": "eslint 'app/**/*.{ts,tsx}'",
     "type-check": "tsc --project app",
     "clean": "rimraf app/.next app/out",
+    "predeploy": "yarn clean && yarn build && yarn export",
     "deploy": "firebase deploy --only hosting"
   },
   "engines": {
