@@ -1,19 +1,5 @@
 {
-  "functions": {
-    "predeploy": "yarn --cwd ./functions build"
-  },
   "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "nextApp"
-      }
-    ]
+    "public": "app/out"
   }
 }

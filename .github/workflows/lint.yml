@@ -22,9 +22,9 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn --cwd ./functions --frozen-lockfile
+        run: yarn --frozen-lockfile
 
       - name: Lint and check types
         run: |
-          yarn --cwd ./functions lint
-          yarn --cwd ./functions type-check
+          yarn lint
+          yarn type-check
