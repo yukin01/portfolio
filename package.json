@@ -12,7 +12,8 @@
     "export": "next export app",
     "lint": "eslint 'app/**/*.{ts,tsx}'",
     "type-check": "tsc --project app",
-    "clean": "rimraf app/.next app/out"
+    "clean": "rimraf app/.next app/out",
+    "deploy": "firebase deploy --only hosting"
   },
   "engines": {
     "node": "10"
