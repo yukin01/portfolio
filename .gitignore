@@ -58,7 +58,8 @@ typings/
 .env
 
 # next.js build output
-.next
+.next/
+out/
 
 # firebase cache
 .firebase
