@@ -4,8 +4,7 @@ on:
     branches:
       - master
     paths:
-      - functions/**
-      - public/**
+      - app/**
       - firebase.json
       - .firebaserc
 
@@ -27,9 +26,9 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn --cwd ./functions --frozen-lockfile
+        run: yarn --frozen-lockfile
 
       - name: Deploy to firebase
-        run: yarn --cwd ./functions deploy --token $FIREBASE_TOKEN
+        run: yarn deploy --token $FIREBASE_TOKEN
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
