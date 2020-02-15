@@ -21,7 +21,8 @@
       "packageNames": [
         "lint-staged",
         "husky",
-        "cross-env"
+        "cross-env",
+        "rimraf"
       ],
       "groupName": "development tools"
     }
