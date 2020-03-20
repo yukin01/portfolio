@@ -9,6 +9,7 @@ on:
       - yarn.lock
       - firebase.json
       - .firebaserc
+      - .github/workflows/deploy.yaml
 
 jobs:
   deploy:
