@@ -20,7 +20,7 @@
     "node": "10"
   },
   "dependencies": {
-    "next": "^9.3.6",
+    "next": "^9.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
