@@ -1,11 +1,7 @@
 {
   "editor.formatOnSave": false,
-  "editor.codeActionsOnSaveTimeout": 2000,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.workingDirectories": [
-    "./functions"
-  ],
-  "typescript.tsdk": "./functions/node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }
