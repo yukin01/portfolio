@@ -17,7 +17,7 @@
     "deploy": "firebase deploy --only hosting"
   },
   "engines": {
-    "node": "10"
+    "node": "12"
   },
   "dependencies": {
     "next": "^9.4.4",
