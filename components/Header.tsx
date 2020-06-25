@@ -1,5 +1,5 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const Header = () => <header></header>
+const Header: FC = () => <header></header>
 
 export default Header
