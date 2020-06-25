@@ -7,17 +7,17 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next app",
-    "build": "next build app",
-    "export": "next export app",
-    "lint": "eslint 'app/**/*.{ts,tsx}'",
-    "type-check": "tsc --project app",
-    "clean": "rimraf app/.next app/out",
+    "dev": "next",
+    "build": "next build",
+    "export": "next export",
+    "lint": "eslint '**/*.{ts,tsx}'",
+    "type-check": "tsc",
+    "clean": "rimraf .next out",
     "predeploy": "yarn clean && yarn build && yarn export",
     "deploy": "firebase deploy --only hosting"
   },
   "engines": {
-    "node": "10"
+    "node": "12"
   },
   "dependencies": {
     "next": "^9.4.4",
