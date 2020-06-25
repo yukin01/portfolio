@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended', // https://github.com/eslint/eslint/blob/master/conf/eslint-recommended.js
-    'plugin:@typescript-eslint/recommended', // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/base.json
+    'plugin:@typescript-eslint/recommended', // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/src/configs
     'plugin:prettier/recommended', // https://github.com/prettier/eslint-plugin-prettier
     'plugin:react/recommended', // https://github.com/yannickcr/eslint-plugin-react
     'prettier/@typescript-eslint', // https://github.com/prettier/eslint-config-prettier
@@ -16,8 +16,6 @@ module.exports = {
   parserOptions: {
     sourceType: 'module'
   },
-  rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off'
-  },
+  rules: {},
   settings: {}
 }
