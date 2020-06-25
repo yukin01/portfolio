@@ -1,29 +1,30 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const Profile = () => (
-  <div>
-    <p>Kinjo Yuji (yukin01)</p>
+type Site = {
+  name: string
+  url: string
+}
+
+const Profile: FC = () => {
+  const sites: Site[] = [
+    { name: 'GitHub', url: 'https://github.com/yukin01' },
+    { name: 'Twitter', url: 'https://twitter.com/_yukin01' },
+    { name: 'SpeakerDeck', url: 'https://speakerdeck.com/yukin01' },
+    { name: 'Qiita', url: 'https://qiita.com/yukin01' }
+  ]
+  return (
     <div>
-      <a href="https://github.com/yukin01" target="_blank" rel="noreferrer noopener">
-        GitHub
-      </a>
+      <img src="/profile.png" alt="Profile image" />
+      <p>Kinjo Yuji (yukin01)</p>
+      {sites.map((site) => (
+        <div key={site.name}>
+          <a href={site.url} target="_blank" rel="noreferrer noopener">
+            {site.name}
+          </a>
+        </div>
+      ))}
     </div>
-    <div>
-      <a href="https://twitter.com/_yukin01" target="_blank" rel="noreferrer noopener">
-        Twitter
-      </a>
-    </div>
-    <div>
-      <a href="https://speakerdeck.com/yukin01" target="_blank" rel="noreferrer noopener">
-        SpeakerDeck
-      </a>
-    </div>
-    <div>
-      <a href="https://qiita.com/yukin01" target="_blank" rel="noreferrer noopener">
-        Qiita
-      </a>
-    </div>
-  </div>
-)
+  )
+}
 
 export default Profile
