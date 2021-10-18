@@ -19,7 +19,7 @@
     "pre-commit": "lint-staged"
   },
   "engines": {
-    "node": "12"
+    "node": "14"
   },
   "dependencies": {
     "next": "^10.0.6",
