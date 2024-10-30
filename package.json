@@ -14,7 +14,7 @@
     "format": "prettier --write '**/*.{ts,tsx}'",
     "type-check": "tsc",
     "clean": "rimraf .next out",
-    "predeploy": "yarn clean && yarn build && yarn export",
+    "predeploy": "yarn clean && yarn build",
     "deploy": "firebase deploy --only hosting",
     "postinstall": "husky install",
     "pre-commit": "lint-staged"
