@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import Image from 'next/image'
+import profile from '../public/profile.png'
 
 type Site = {
   name: string
@@ -14,7 +16,7 @@ const Profile: FC = () => {
   ]
   return (
     <div>
-      <img src="/profile.png" alt="Profile image" />
+      <Image src={profile} alt="Profile image" />
       <p>Kinjo Yuji (yukin01)</p>
       {sites.map((site) => (
         <div key={site.name}>
