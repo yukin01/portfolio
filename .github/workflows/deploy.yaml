@@ -1,5 +1,6 @@
 name: Deploy
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -28,10 +29,13 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+
       - name: Deploy to firebase
-        run: yarn deploy --token $FIREBASE_TOKEN
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: yarn deploy
 
       - name: Notify to Slack
         uses: yukin01/slack-bot-action@master
