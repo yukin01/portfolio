@@ -15,11 +15,17 @@ export default tseslint.config(
   {
     languageOptions: {
       globals: globals.browser
+    },
+    settings: {
+      react: {
+        version: 'detect'
+      }
     }
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   eslintConfigPrettier,
   reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat['jsx-runtime'],
   ...fixupConfigRules(flatcompat.extends('plugin:@next/next/recommended'))
 )

@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
+import { FC, CSSProperties } from 'react'
 import Profile from './Profile'
 
 const App: FC = () => {
-  const style: React.CSSProperties = {
+  const style: CSSProperties = {
     fontFamily: [
       '"Helvetica Neue"',
       'Arial',
