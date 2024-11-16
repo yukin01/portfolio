@@ -2,7 +2,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   lint:
@@ -20,4 +20,5 @@ jobs:
       - name: Lint and check types
         run: |
           yarn lint
+          yarn format:check
           yarn type-check
