@@ -51,10 +51,5 @@
   },
   "resolutions": {
     "@types/react": "18.3.12"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix"
-    ]
   }
 }
