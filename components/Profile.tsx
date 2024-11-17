@@ -18,7 +18,7 @@ const Profile: FC = () => {
   return (
     <div>
       <Image src={profile} alt="Profile image" width={240} height={240} style={{ borderRadius: '120px' }} />
-      <h2>Kinjo Yuji (yukin01)</h2>
+      <h2>Kinjo Yuji - @yukin01</h2>
       <ul>
         {sites.map((site) => (
           <li key={site.name} style={{ marginBottom: '5px' }}>
