@@ -1,21 +1,16 @@
 {
   "timezone": "Asia/Tokyo",
   "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests"
+    "group:allNonMajor",
+    "config:best-practices"
   ],
   "rangeStrategy": "pin",
   "schedule": ["on friday"],
   "prHourlyLimit": 5,
   "packageRules": [
     {
-      "groupName": "development tools",
-      "matchPackageNames": [
-        "lint-staged",
-        "husky",
-        "cross-env",
-        "rimraf"
-      ]
+      "matchPackageNames": ["node"],
+      "allowedVersions": "/^[0-9]*[02468]([.-].*)?$/"
     }
   ]
 }
