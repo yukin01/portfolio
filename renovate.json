@@ -7,10 +7,5 @@
   "rangeStrategy": "pin",
   "schedule": ["on friday"],
   "prHourlyLimit": 5,
-  "packageRules": [
-    {
-      "matchPackageNames": ["node"],
-      "allowedVersions": "/^[0-9]*[02468]([.-].*)?$/"
-    }
-  ]
+  "packageRules": []
 }
