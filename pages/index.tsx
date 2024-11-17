@@ -1,19 +1,10 @@
 import { FC } from 'react'
 import Profile from '../components/Profile'
 
+import styles from '../styles/index.module.css'
+
 const Index: FC = () => (
-  <div
-    style={{
-      fontFamily: [
-        '"Helvetica Neue"',
-        'Arial',
-        '"Hiragino Kaku Gothic ProN"',
-        '"Hiragino Sans"',
-        'Meiryo',
-        'sans-serif'
-      ].join(',')
-    }}
-  >
+  <div className={styles.container}>
     <Profile />
   </div>
 )
